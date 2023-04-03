@@ -7,7 +7,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Класс для сортировки строк в файле
+ */
 public class FileLinesSorter {
+    /**
+     * Метод, отсортировывающий каждую строку
+     * @param filePath путь к файлу
+     * @return путь к новому сгенерированному файлу
+     */
     public static String sortLineByLine(String filePath) throws IOException {
         File source = new File(filePath);
         File dest = new File("lines_sorted.txt");
@@ -30,6 +38,12 @@ public class FileLinesSorter {
         it.close();
         return dest.getAbsolutePath();
     }
+    /**
+     * Метод, сортирующий все строки между собой
+     * Сложность: O(nlog(n))
+     * @param filePath путь к файлу
+     * @return путь к новому сгенерированному файлу
+     */
     public static String sortLinesInFile(String filePath) throws IOException{
         File source = new File(filePath);
         var strings = new ArrayList<String>();
